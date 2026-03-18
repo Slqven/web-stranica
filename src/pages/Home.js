@@ -125,7 +125,7 @@ function Home() {
             {[1, 2, 3, 4, 5, 6].map((num) => (
               <div key={num} className="gallery-item">
                 <img 
-                  src={`https://picsum.photos/400/400?random=${num}`} 
+                  src={`${process.env.PUBLIC_URL}/images/gallery-${num}.jpg`} 
                   alt={`Galerija ${num}`} 
                   loading="lazy"
                 />

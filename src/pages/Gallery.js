@@ -4,10 +4,11 @@ import './Pages.css';
 function Gallery() {
   const [selectedImage, setSelectedImage] = useState(null);
 
-  const images = Array.from({ length: 12 }, (_, i) => ({
+  const galleryNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 12, 13, 14, 15];
+  const images = galleryNumbers.map((num, i) => ({
     id: i + 1,
-    src: `https://picsum.photos/500/500?random=${i + 10}`,
-    alt: `Galerija ${i + 1}`
+    src: `${process.env.PUBLIC_URL}/images/gallery-${num}.jpg`,
+    alt: `Galerija ${num}`
   }));
 
   return (
