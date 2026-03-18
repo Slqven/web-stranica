@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/web-stranica/static/css/main.de8f4ffa.css",
-    "main.js": "/web-stranica/static/js/main.dabb79cd.js",
+    "main.css": "/web-stranica/static/css/main.fd52afe9.css",
+    "main.js": "/web-stranica/static/js/main.a9867614.js",
     "static/js/453.dfd6e31e.chunk.js": "/web-stranica/static/js/453.dfd6e31e.chunk.js",
     "index.html": "/web-stranica/index.html",
-    "main.de8f4ffa.css.map": "/web-stranica/static/css/main.de8f4ffa.css.map",
-    "main.dabb79cd.js.map": "/web-stranica/static/js/main.dabb79cd.js.map",
+    "main.fd52afe9.css.map": "/web-stranica/static/css/main.fd52afe9.css.map",
+    "main.a9867614.js.map": "/web-stranica/static/js/main.a9867614.js.map",
     "453.dfd6e31e.chunk.js.map": "/web-stranica/static/js/453.dfd6e31e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.de8f4ffa.css",
-    "static/js/main.dabb79cd.js"
+    "static/css/main.fd52afe9.css",
+    "static/js/main.a9867614.js"
   ]
 }
