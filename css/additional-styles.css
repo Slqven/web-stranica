@@ -1,0 +1,466 @@
+/* ============================================
+   ADDITIONAL STYLES FOR ENHANCED FEATURES
+   ============================================ */
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #d4a574 0%, #c4927d 100%);
+  color: white;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 999;
+  box-shadow: 0 4px 15px rgba(212, 165, 116, 0.3);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 25px rgba(212, 165, 116, 0.5);
+}
+
+/* Skip to Main Content Link (Accessibility) */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #d4a574;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  z-index: 10000;
+  border-radius: 0 0 4px 0;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* ============================================
+   BEFORE/AFTER IMAGE SLIDER
+   ============================================ */
+
+.before-after-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  cursor: ew-resize;
+  user-select: none;
+}
+
+.before-after-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+
+.ba-before,
+.ba-after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.ba-before {
+  position: relative;
+}
+
+.ba-after {
+  clip-path: inset(0 50% 0 0);
+  transition: clip-path 0.1s ease-out;
+}
+
+.ba-slider {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background: white;
+  transform: translateX(-50%);
+  z-index: 10;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: left 0.1s ease-out;
+}
+
+.ba-handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  background: white;
+  border: 3px solid #d4a574;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  cursor: ew-resize;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 11;
+}
+
+.ba-handle:hover,
+.ba-handle:focus {
+  transform: translate(-50%, -50%) scale(1.1);
+  box-shadow: 0 6px 20px rgba(212, 165, 116, 0.5);
+  outline: none;
+}
+
+.ba-handle.dragging {
+  transform: translate(-50%, -50%) scale(1.15);
+}
+
+.ba-handle::before,
+.ba-handle::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.ba-handle::before {
+  left: 12px;
+  border-width: 8px 8px 8px 0;
+  border-color: transparent #d4a574 transparent transparent;
+}
+
+.ba-handle::after {
+  right: 12px;
+  border-width: 8px 0 8px 8px;
+  border-color: transparent transparent transparent #d4a574;
+}
+
+.ba-label {
+  position: absolute;
+  top: 20px;
+  padding: 8px 16px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 20px;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.ba-label.before {
+  left: 20px;
+}
+
+.ba-label.after {
+  right: 20px;
+}
+
+/* ============================================
+   MOBILE MENU
+   ============================================ */
+
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: var(--primary-color);
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: block;
+  }
+  
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: white;
+    flex-direction: column;
+    padding: 80px 20px 20px;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    transition: right 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .nav-menu.active {
+    right: 0;
+  }
+  
+  .nav-link {
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+  }
+}
+
+/* ============================================
+   TOAST NOTIFICATIONS
+   ============================================ */
+
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: white;
+  padding: 16px 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 10000;
+  max-width: 350px;
+}
+
+.toast.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.toast-success {
+  border-left: 4px solid #4caf50;
+}
+
+.toast-error {
+  border-left: 4px solid #f44336;
+}
+
+.toast-info {
+  border-left: 4px solid #2196f3;
+}
+
+/* ============================================
+   FORM ERROR STATES
+   ============================================ */
+
+input.error,
+textarea.error,
+select.error {
+  border-color: #f44336 !important;
+  background: #ffebee;
+}
+
+.field-error {
+  color: #f44336;
+  font-size: 0.85rem;
+  margin-top: 5px;
+  display: block;
+}
+
+/* ============================================
+   LOADING STATES
+   ============================================ */
+
+.loading {
+  position: relative;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #d4a574;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* ============================================
+   COOKIE CONSENT BANNER
+   ============================================ */
+
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #2c2c2c;
+  color: white;
+  padding: 20px;
+  z-index: 9999;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+}
+
+.cookie-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.cookie-content p {
+  margin: 0;
+  flex: 1;
+}
+
+.cookie-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.cookie-accept,
+.cookie-decline {
+  padding: 10px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.cookie-accept {
+  background: #d4a574;
+  color: white;
+}
+
+.cookie-accept:hover {
+  background: #c4927d;
+}
+
+.cookie-decline {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+}
+
+.cookie-decline:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+@media (max-width: 768px) {
+  .ba-handle {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .ba-handle::before {
+    left: 10px;
+    border-width: 6px 6px 6px 0;
+  }
+  
+  .ba-handle::after {
+    right: 10px;
+    border-width: 6px 0 6px 6px;
+  }
+  
+  .ba-label {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+  
+  .cookie-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .cookie-actions {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+  .chat-widget,
+  .chat-toggle,
+  .back-to-top,
+  .cookie-banner,
+  .mobile-menu-toggle {
+    display: none !important;
+  }
+}
+
+/* ============================================
+   HIGH CONTRAST MODE
+   ============================================ */
+
+@media (prefers-contrast: high) {
+  .service-card,
+  .testimonial-card,
+  .offer-card {
+    border: 2px solid #000;
+  }
+  
+  button,
+  .glow-button {
+    border: 2px solid currentColor;
+  }
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================
+   FOCUS VISIBLE (Accessibility)
+   ============================================ */
+
+*:focus-visible {
+  outline: 3px solid #d4a574;
+  outline-offset: 2px;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid #d4a574;
+  outline-offset: 2px;
+}

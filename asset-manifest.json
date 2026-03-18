@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/web-stranica/static/css/main.6a226558.css",
+    "main.js": "/web-stranica/static/js/main.625ab65f.js",
+    "static/js/453.dfd6e31e.chunk.js": "/web-stranica/static/js/453.dfd6e31e.chunk.js",
+    "index.html": "/web-stranica/index.html",
+    "main.6a226558.css.map": "/web-stranica/static/css/main.6a226558.css.map",
+    "main.625ab65f.js.map": "/web-stranica/static/js/main.625ab65f.js.map",
+    "453.dfd6e31e.chunk.js.map": "/web-stranica/static/js/453.dfd6e31e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6a226558.css",
+    "static/js/main.625ab65f.js"
+  ]
+}
